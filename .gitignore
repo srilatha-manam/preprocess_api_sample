@@ -1,0 +1,24 @@
+# Ignore all binary files in pretrained_finetuned_models
+pretrained_finetuned_models/*
+
+# Ignore dialouge pickle files inside data/dialogue
+data/dialogue/*.pkl
+
+# Ignore all pickle files across the project
+*.pkl
+
+# Ignore any  files
+*.bin  
+
+#Ignore PyTorch models
+*.pt
+
+#Ignore Keras models
+*.h5
+
+#Ignore Tensorflow models
+*.tflite
+
+#Ignore Open Neural Network Exchange
+*.onnx
+
