@@ -3,7 +3,13 @@ import os
 import pickle
 import logging
 from datetime import datetime
+
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from predefined_models.text_embedding import get_text_embedding_model
+
+
 
 # Logging setup
 log_file = './logs/preprocess_pipeline.log'
