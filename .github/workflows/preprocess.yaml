@@ -22,7 +22,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run Preprocessing Script
-        run: python preprocess_pipeline.py
+        run: python preprocess_api_sample/preprocess/dialouge_preprocess.py
 
       - name: Log completion
         run: echo "Preprocessing completed at $(date)"
