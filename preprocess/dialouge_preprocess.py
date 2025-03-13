@@ -21,12 +21,11 @@ model = get_text_embedding_model()
 # Function to preprocess text data
 def preprocess_data(chunk_size=5000, batch_size=100):
     try:
-        logging.info('Starting preprocessing...')
-        # Load CSV
+        logging.info('Starting preprocessing')        
         df = pd.read_csv(data_path)
         
         # Drop duplicates based on 'text' column, ignoring 'dialog_id'
-        df = df.drop_duplicates(subset='text', keep='first').copy()
+        df = df.drop_duplicates(keep='first').copy()
         
         # Add 'status' column with default value 'False'
         if 'status' not in df.columns:
@@ -82,3 +81,5 @@ def process_and_save(batch, preprocessed_data):
 
 if __name__ == '__main__':
     preprocess_data()
+#change this code that will store embedding data in Supabase 
+# Add code for Stripping whitespace, Lowercasing, and removing stopwords
