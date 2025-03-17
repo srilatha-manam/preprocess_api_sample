@@ -1,0 +1,4 @@
+2025-03-17 14:47:34,639 - INFO - Use pytorch device_name: cpu
+2025-03-17 14:47:34,639 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-17 14:47:41,975 - INFO - Starting preprocessing
+2025-03-17 14:47:41,975 - ERROR - Error during preprocessing: [Errno 2] No such file or directory: './data/dialogue/dialogs.csv'

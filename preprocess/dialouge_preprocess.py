@@ -18,7 +18,7 @@ logging.basicConfig(filename=log_file, level=logging.INFO,
 
 # File paths
 data_path = './data/dialogue/dialogs.csv'
-pickle_path = './data/dialogue/dialog_preprocessed.pkl'
+pickle_path = './data/dialogue/dialog_preprocessed.pkl'  
 exception_log = './exceptions/preprocess_exceptions.log'
 
 # Load the SentenceTransformer model
