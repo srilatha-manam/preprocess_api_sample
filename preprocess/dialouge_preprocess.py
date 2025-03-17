@@ -89,3 +89,37 @@ if __name__ == '__main__':
     preprocess_data()
 #change this code that will store embedding data in Supabase 
 # Add code for Stripping whitespace, Lowercasing, and removing stopwords
+
+'''
+#wrute preprocessed data to supabase 
+from supabase import create_client, Client
+
+# Supabase setup
+SUPABASE_URL = ""
+SUPABASE_KEY = ""
+supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
+
+def process_and_save(batch):
+    if batch.empty:
+        return
+
+    try:
+        # Preprocess text
+        batch['text'] = batch['text'].str.strip().str.lower()
+        
+        # Generate embeddings
+        batch['vector'] = batch['text'].apply(lambda x: model.encode(x).tolist())
+        batch['status'] = True
+
+        # Insert into Supabase
+        data_to_insert = batch[['text', 'vector', 'status']].to_dict(orient='records')
+        response = supabase.table("dialog_embeddings").insert(data_to_insert).execute()
+
+        if response.get("error"):
+            logging.error(f"Supabase error: {response['error']}")
+        else:
+            logging.info(f"Inserted {len(data_to_insert)} records into Supabase.")
+
+    except Exception as e:
+        logging.error(f'Error processing batch: {e}')'
+        '''
