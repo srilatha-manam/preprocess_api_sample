@@ -21,7 +21,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run Preprocessing Script
-        run: python preprocess_api_sample/preprocess/dialouge_preprocess.py
+        run: python preprocess/dialouge_preprocess.py
 
       - name: Upload Processed Data as Artifact
         uses: actions/upload-artifact@v4
